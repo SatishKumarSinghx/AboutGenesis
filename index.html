@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Genesis Framework</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background: #d5f2dd;
+            color: #000;
+        }
+        header {
+            background: linear-gradient(135deg, #4caf50, #388e3c);
+            color: #fff;
+            padding: 1rem 0;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            position: relative;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 3rem;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+        }
+        header p {
+            margin: 1rem 0;
+            font-size: 1.5rem;
+        }
+        header .cta-buttons a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 0.5rem;
+            padding: 0.7rem 1.5rem;
+            background: #ff9800;
+            border-radius: 25px;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+            transition: background 0.3s, transform 0.3s;
+        }
+        header .cta-buttons a:hover {
+            background: #e65100;
+            transform: scale(1.05);
+        }
+        header img {
+            position: absolute;
+            left: 0;
+            top: 0;
+            max-height: 100%;
+        }
+        section {
+            padding: 1rem 2rem;
+        }
+        section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        .features, .benefits {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            justify-content: center;
+        }
+        .features div, .benefits div {
+            flex: 1 1 calc(30% - 2rem);
+            background: #a5d6a7;
+            border: 1px solid rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        .features div:hover, .benefits div:hover {
+            transform: scale(1.05);
+        }
+        footer {
+            text-align: center;
+            padding: 1rem 0;
+            background: #388e3c;
+            color: #fff;
+            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.3);
+        }
+        .diagrams {
+            text-align: center;
+            margin: 1rem 0;
+        }
+        .diagrams img {
+            max-width: 90%;
+            height: auto;
+            margin-bottom: 2rem;
+            border: 2px solid rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+        #call-to-action .cta-buttons a {
+            margin: 0 1rem;
+            padding: 0.8rem 2rem;
+            background: #64dd17;
+            color: #000;
+            font-weight: bold;
+            text-shadow: none;
+        }
+        #call-to-action .cta-buttons a:hover {
+            background: #33691e;
+        }
+        .highlighter {
+            background-color: #d3cefc;
+        }
+    </style>
+</head>
+
+<body>
+<header>
+    <h1>Genesis Framework</h1>
+    <p>Seamless interprocess communication and unparalleled scalability.</p>
+    <div class="cta-buttons">
+        <a href="#features">Learn More</a>
+        <a href="#download">Download Now</a>
+    </div>
+</header>
+
+<section id="introduction">
+    <h2>Overview</h2>
+    <p>Genesis is a versatile framework designed to standardize and simplify process creation and interprocess communication targeted for embedded domain. With Genesis, developers can achieve unparalleled efficiency, flexibility, and scalability for complex systems.</p>
+    <p>It contains c++ header only libray which makes it easier to integrate into any project.</p>
+</section>
+
+<section id="features">
+    <h2>Key Features</h2>
+    <div class="features">
+        <div>
+            <h3>Standardized Process Architecture</h3>
+            <ul>
+                <li>
+                    <p>Each class inheriting from the Genesis framework automatically gains a dedicated mailbox and a separate thread.</p>
+                </li>
+                <li>
+                    <p>Supports receiving and handling data in any generic format.</p>
+                </li>
+                <li>
+                    <p>Simplifies synchronization, reducing development complexity.</p>
+                </li>
+            </ul>
+            
+        </div>
+        <div>
+            <h3>Built-In Publisher & Subscriber Threads</h3>
+        <ul>
+            <li><p>A publisher thread handles serialization and sends messages to a specific port.</p></li>
+            <li><p>A subscriber thread connects to targeted ports, deserializes messages, and routes them to the intended recipient thread.</p></li>
+            <li><p>Enables seamless communication across processes.</p></li>
+        </ul>
+        </div>
+        <div>
+            <h3>High Scalability</h3>
+        <ul>
+            <li><p>Supports sophisticated concurrent operations with minimal developer effort.</p></li>
+            <li><p>Processes can scale effortlessly by leveraging Genesis’ thread-per-class model and efficient message handling.</p></li>
+        </ul>
+        </div>
+    </div>
+</section>
+
+<section id="features">
+    <div class="features">
+        <div>
+            <h3>Flexible Data Handling</h3>
+            <ul>
+                <li><p>Use JSON for seamless serialization and deserialization of dynamic and structured data.</p></li>
+                <li><p>Supports passing complex, structured, and dynamic data between threads and processes</p></li>
+            </ul>
+        </div>
+        <div>
+            <h3>Interprocess Communication Powered by ZMQ</h3>
+            <ul>
+                <li><p>Uses ZMQ in publisher-subscriber mode for robust and high-performance message passing.</p></li>
+                <li><p>Ensures reliable communication between processes within or across systems.</p></li>
+            </ul>
+        </div>
+    </div>
+</section> 
+
+
+<section id="how-it-works">
+    <h2>How It Works</h2>
+    <div class="diagrams">
+        <h3 class="highlighter">Thread-Per-Class Architecture</h3>
+        <img src="Arch.png" alt="Thread-Per-Class Architecture Diagram">
+        
+        <h3 class="highlighter">Publisher-Subscriber Design</h3>
+        <p>Each publisher thread binds to a unique port and publishes message to it.</p>
+        <p>Each subscriber thread subscribes to ports it is interested in .</p>
+        <p>Any process can communicate to any other process.</p>
+        <img src="PubSub.png" alt="Publisher-Subscriber Flow Diagram">
+        
+        <h3 class="highlighter">Message Flow & Lifecycle</h3>
+        <img src="MsgLife.png" alt="Message Lifecycle Diagram">
+    </div>
+</section>
+
+<section id="benefits">
+    <h2>Benefits</h2>
+    <div class="benefits">
+        <div>
+            <h3>Simplified Development</h3>
+            <p>Focus on business logic while Genesis handles threads and communication.</p>
+        </div>
+        <div>
+            <h3>Enhanced Efficiency</h3>
+            <p>Automatic thread management and optimized message handling for faster development.</p>
+        </div>
+        <div>
+            <h3>Future-Proof Design</h3>
+            <p>Scalable architecture with ZMQ and JSON ensures long-term adaptability.</p>
+        </div>
+    </div>
+</section>
+
+<section id="technology">
+    <h2>Technology Stack</h2>
+    <p>Genesis leverages ZMQ for robust communication and JSON for flexible data handling. This combination ensures reliable performance across diverse systems.</p>
+</section>
+
+<section id="applications">
+    <h2>Ideal Applications</h2>
+    <p>Genesis is perfect for embedded systems with high concurrency, real-time systems, IoT devices, and dynamic messaging needs.</p>
+    <p>It supports comminication between any two nodes which are network reachable.</p>
+</section>
+
+<section id="call-to-action">
+    <h2>Get Started with Genesis</h2>
+    <p>Ready to revolutionize your embedded systems? Download Genesis today and explore the possibilities.</p>
+    <div class="cta-buttons">
+        <a href="#download">Download Now</a>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2024 Genesis Framework. Open Sourced.</p>
+    <p>Email: isatishsinghx@gmail.com </p>
+</footer>
+
+</body>
+</html>
