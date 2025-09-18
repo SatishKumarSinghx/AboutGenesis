@@ -1,246 +1,234 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Genesis Framework</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-            background: #d5f2dd;
-            color: #000;
-        }
-        header {
-            background: linear-gradient(135deg, #4caf50, #388e3c);
-            color: #fff;
-            padding: 1rem 0;
-            text-align: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-            position: relative;
-        }
-        header h1 {
-            margin: 0;
-            font-size: 3rem;
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
-        }
-        header p {
-            margin: 1rem 0;
-            font-size: 1.5rem;
-        }
-        header .cta-buttons a {
-            color: #fff;
-            text-decoration: none;
-            margin: 0 0.5rem;
-            padding: 0.7rem 1.5rem;
-            background: #ff9800;
-            border-radius: 25px;
-            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
-            transition: background 0.3s, transform 0.3s;
-        }
-        header .cta-buttons a:hover {
-            background: #e65100;
-            transform: scale(1.05);
-        }
-        header img {
-            position: absolute;
-            left: 0;
-            top: 0;
-            max-height: 100%;
-        }
-        section {
-            padding: 1rem 2rem;
-        }
-        section h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-        .features, .benefits {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1.5rem;
-            justify-content: center;
-        }
-        .features div, .benefits div {
-            flex: 1 1 calc(30% - 2rem);
-            background: #a5d6a7;
-            border: 1px solid rgba(0, 0, 0, 0.3);
-            border-radius: 10px;
-            padding: 1.5rem;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            text-align: center;
-            transition: transform 0.3s;
-        }
-        .features div:hover, .benefits div:hover {
-            transform: scale(1.05);
-        }
-        footer {
-            text-align: center;
-            padding: 1rem 0;
-            background: #388e3c;
-            color: #fff;
-            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.3);
-        }
-        .diagrams {
-            text-align: center;
-            margin: 1rem 0;
-        }
-        .diagrams img {
-            max-width: 90%;
-            height: auto;
-            margin-bottom: 2rem;
-            border: 2px solid rgba(0, 0, 0, 0.2);
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-        }
-        #call-to-action .cta-buttons a {
-            margin: 0 1rem;
-            padding: 0.8rem 2rem;
-            background: #64dd17;
-            color: #000;
-            font-weight: bold;
-            text-shadow: none;
-        }
-        #call-to-action .cta-buttons a:hover {
-            background: #33691e;
-        }
-        .highlighter {
-            background-color: #d3cefc;
-        }
-    </style>
-</head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Genesis Framework</title>
+  <style>
+    :root {
+      --primary: #43a047;
+      --secondary: #2e7d32;
+      --accent: #ff9800;
+      --section-bg: #f1f8f4; /* soft green box */
+      --tile-bg: #fff9e6;   /* subtle yellowish */
+      --dark: #1b1b1b;
+    }
+    body {
+      margin: 0;
+      font-family: "Poppins", "Segoe UI", sans-serif;
+      background: #fff;
+      color: #333;
+      line-height: 1.6;
+    }
 
+    /* --- HERO --- */
+    header {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: #fff;
+      text-align: center;
+      padding: 2rem 1rem 2.5rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+    header h1 {
+      font-size: 2.5rem;
+      margin: 0;
+      font-weight: 700;
+    }
+    header p {
+      font-size: 1.15rem;
+      margin: 0.8rem auto 1.4rem;
+      max-width: 650px;
+    }
+    .cta-buttons a {
+      display: inline-block;
+      margin: 0.4rem;
+      padding: 0.7rem 1.5rem;
+      background: var(--accent);
+      color: #fff;
+      border-radius: 25px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: 0.3s;
+      font-size: 0.95rem;
+    }
+    .cta-buttons a:hover {
+      background: #e65100;
+      transform: translateY(-2px);
+    }
+
+    /* --- SECTIONS --- */
+    section {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 1.8rem 1.5rem;
+      background: var(--section-bg);
+      border-radius: 12px;
+    }
+    section h2 {
+      text-align: center;
+      font-size: 1.9rem;
+      margin-bottom: 1.2rem;
+      color: var(--secondary);
+      position: relative;
+    }
+    section h2::after {
+      content: "";
+      display: block;
+      width: 55px;
+      height: 3px;
+      background: var(--accent);
+      margin: 0.5rem auto 0;
+      border-radius: 2px;
+    }
+
+    /* --- GRID / CARDS --- */
+    .grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.2rem;
+      justify-content: center;
+    }
+    .card {
+      flex: 1 1 260px;
+      background: var(--tile-bg);
+      border-radius: 12px;
+      padding: 1.4rem 1rem;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      transition: 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 18px rgba(0,0,0,0.12);
+    }
+    .card h3 {
+      margin-top: 0.3rem;
+      color: var(--primary);
+      font-size: 1.1rem;
+    }
+    .card p {
+      font-size: 0.9rem;
+      margin: 0.5rem 0 0;
+    }
+
+    /* --- DIAGRAMS --- */
+    .diagrams {
+      text-align: center;
+    }
+    .diagrams h3 {
+      margin: 1.2rem 0 0.5rem;
+      font-size: 1.2rem;
+      color: var(--primary);
+    }
+    .diagrams img {
+      display: block;
+      margin: 0.8rem auto 1.5rem;
+      max-width: 85%;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    }
+
+    /* --- FOOTER --- */
+    footer {
+      text-align: center;
+      padding: 1rem 0;
+      background: var(--dark);
+      color: #ccc;
+      font-size: 0.85rem;
+    }
+  </style>
+</head>
 <body>
+
 <header>
-    <h1>Genesis Framework</h1>
-    <p>Seamless interprocess communication and unparalleled scalability.</p>
-    <div class="cta-buttons">
-        <a href="#features">Learn More</a>
-        <a href="#download">Download Now</a>
-    </div>
+  <h1>Genesis Framework</h1>
+  <p>Seamless interprocess & interthread communication.<br/>Scalable, versatile, and built for the future.</p>
+  <div class="cta-buttons">
+    <a href="#features">Learn More</a>
+    <a href="#download">Download Soon</a>
+  </div>
 </header>
 
-<section id="introduction">
-    <h2>Overview</h2>
-    <p>Genesis is a versatile framework designed to standardize and simplify process creation and interprocess communication targeted for embedded domain. With Genesis, developers can achieve unparalleled efficiency, flexibility, and scalability for complex systems.</p>
-    <p>It contains c++ header only libray which makes it easier to integrate into any project.</p>
+<section id="overview">
+  <h2>Overview</h2>
+  <p style="text-align:center; max-width:800px; margin:auto;">
+    Genesis is a developer-first framework that eliminates the complexity of communication between processes and threads.  
+    It’s simple, scalable, and works across machines. So you can focus on building great systems, not plumbing.
+  </p>
+</section>
+
+<section id="problem-solution">
+  <h2>The Challenge</h2>
+  <div class="grid">
+    <div class="card"><h3>RPC</h3><p>Require code generation for new data, nodes must constantly adapt.</p></div>
+    <div class="card"><h3>Shared Memory</h3><p>Fast but fragile, lock-heavy, and limited to one machine.</p></div>
+    <div class="card"><h3>Sockets / Pipes</h3><p>Low-level, verbose, and prone to errors.</p></div>
+    <div class="card"><h3>Message Queues</h3><p>Rigid schemas, fixed sizes, and poor scalability.</p></div>
+  </div>
+
+  <h2>The Genesis Advantage</h2>
+  <div class="grid">
+    <div class="card"><h3>No Code Generation</h3><p>Add new topics or richer data without breakage.</p></div>
+    <div class="card"><h3>Loose Coupling</h3><p>Nodes evolve independently. subscribers only take what they need.</p></div>
+    <div class="card"><h3>Flexible Messaging</h3><p>Send JSON, structured, or raw data with ease.</p></div>
+    <div class="card"><h3>Scalable Anywhere</h3><p>Works seamlessly across threads, processes, and even remote machines.</p></div>
+  </div>
 </section>
 
 <section id="features">
-    <h2>Key Features</h2>
-    <div class="features">
-        <div>
-            <h3>Standardized Process Architecture</h3>
-            <ul>
-                <li>
-                    <p>Each class inheriting from the Genesis framework automatically gains a dedicated mailbox and a separate thread.</p>
-                </li>
-                <li>
-                    <p>Supports receiving and handling data in any generic format.</p>
-                </li>
-                <li>
-                    <p>Simplifies synchronization, reducing development complexity.</p>
-                </li>
-            </ul>
-            
-        </div>
-        <div>
-            <h3>Built-In Publisher & Subscriber Threads</h3>
-        <ul>
-            <li><p>A publisher thread handles serialization and sends messages to a specific port.</p></li>
-            <li><p>A subscriber thread connects to targeted ports, deserializes messages, and routes them to the intended recipient thread.</p></li>
-            <li><p>Enables seamless communication across processes.</p></li>
-        </ul>
-        </div>
-        <div>
-            <h3>High Scalability</h3>
-        <ul>
-            <li><p>Supports sophisticated concurrent operations with minimal developer effort.</p></li>
-            <li><p>Processes can scale effortlessly by leveraging Genesis’ thread-per-class model and efficient message handling.</p></li>
-        </ul>
-        </div>
-    </div>
+  <h2>Key Features</h2>
+  <div class="grid">
+    <div class="card"><h3>Thread-Per-Class</h3><p>Each class has its own thread & mailbox for concurrency.</p></div>
+    <div class="card"><h3>Publisher-Subscriber</h3><p>Built-in model handles routing and message flow.</p></div>
+    <div class="card"><h3>One-to-Many / Many-to-One</h3><p>Broadcast or aggregate data flows effortlessly.</p></div>
+    <div class="card"><h3>Versatile Data</h3><p>Handle JSON, structured, or binary data flexibly.</p></div>
+    <div class="card"><h3>Safe & Reliable</h3><p>Thread-safe by design with no race conditions.</p></div>
+    <div class="card"><h3>Powered by ZeroMQ</h3><p>Built on proven high-performance technology.</p></div>
+  </div>
 </section>
 
-<section id="features">
-    <div class="features">
-        <div>
-            <h3>Flexible Data Handling</h3>
-            <ul>
-                <li><p>Use JSON for seamless serialization and deserialization of dynamic and structured data.</p></li>
-                <li><p>Supports passing complex, structured, and dynamic data between threads and processes</p></li>
-            </ul>
-        </div>
-        <div>
-            <h3>Interprocess Communication Powered by ZMQ</h3>
-            <ul>
-                <li><p>Uses ZMQ in publisher-subscriber mode for robust and high-performance message passing.</p></li>
-                <li><p>Ensures reliable communication between processes within or across systems.</p></li>
-            </ul>
-        </div>
-    </div>
-</section> 
+<section id="architecture">
+  <h2>Architecture</h2>
+  <div class="diagrams">
+    <h3>Core Architecture</h3>
+    <img src="Arch.png" alt="Thread-Per-Class Architecture">
 
+    <h3>Communication Pattern</h3>
+    <img src="PubSub.png" alt="Publisher-Subscriber Flow">
 
-<section id="how-it-works">
-    <h2>How It Works</h2>
-    <div class="diagrams">
-        <h3 class="highlighter">Thread-Per-Class Architecture</h3>
-        <img src="Arch.png" alt="Thread-Per-Class Architecture Diagram">
-        
-        <h3 class="highlighter">Publisher-Subscriber Design</h3>
-        <p>Each publisher thread binds to a unique port and publishes message to it.</p>
-        <p>Each subscriber thread subscribes to ports it is interested in .</p>
-        <p>Any process can communicate to any other process.</p>
-        <img src="PubSub.png" alt="Publisher-Subscriber Flow Diagram">
-        
-        <h3 class="highlighter">Message Flow & Lifecycle</h3>
-        <img src="MsgLife.png" alt="Message Lifecycle Diagram">
-    </div>
+    <h3>Message Lifecycle</h3>
+    <img src="MsgLife.png" alt="Message Lifecycle">
+  </div>
 </section>
 
 <section id="benefits">
-    <h2>Benefits</h2>
-    <div class="benefits">
-        <div>
-            <h3>Simplified Development</h3>
-            <p>Focus on business logic while Genesis handles threads and communication.</p>
-        </div>
-        <div>
-            <h3>Enhanced Efficiency</h3>
-            <p>Automatic thread management and optimized message handling for faster development.</p>
-        </div>
-        <div>
-            <h3>Future-Proof Design</h3>
-            <p>Scalable architecture with ZMQ and JSON ensures long-term adaptability.</p>
-        </div>
-    </div>
-</section>
-
-<section id="technology">
-    <h2>Technology Stack</h2>
-    <p>Genesis leverages ZMQ for robust communication and JSON for flexible data handling. This combination ensures reliable performance across diverse systems.</p>
+  <h2>Benefits</h2>
+  <div class="grid">
+    <div class="card"><h3>Simplified Development</h3><p>Focus on business logic while Genesis manages messaging.</p></div>
+    <div class="card"><h3>Efficiency</h3><p>Optimized threads and message handling for smooth scaling.</p></div>
+    <div class="card"><h3>Future-Proof</h3><p>Flexible architecture adapts as systems evolve.</p></div>
+  </div>
 </section>
 
 <section id="applications">
-    <h2>Ideal Applications</h2>
-    <p>Genesis is perfect for embedded systems with high concurrency, real-time systems, IoT devices, and dynamic messaging needs.</p>
-    <p>It supports comminication between any two nodes which are network reachable.</p>
+  <h2>Applications</h2>
+  <p style="text-align:center; max-width:800px; margin:auto;">
+    Genesis is perfect for embedded systems, IoT, robotics, real-time apps, and distributed computing.  
+    If two nodes can reach each other, Genesis connects them.
+  </p>
 </section>
 
 <section id="call-to-action">
-    <h2>Get Started with Genesis</h2>
-    <p>Ready to revolutionize your embedded systems? Download Genesis today and explore the possibilities.</p>
-    <div class="cta-buttons">
-        <a href="#download">Download Now</a>
-    </div>
+  <h2>Get Started</h2>
+  <p style="text-align:center;">Experience the simplicity of Genesis in your next project.</p>
+  <div class="cta-buttons" style="text-align:center;">
+    <a href="#download">Download Coming Soon</a>
+  </div>
 </section>
 
 <footer>
-    <p>&copy; 2024 Genesis Framework. Open Sourced.</p>
-    <p>Email: isatishsinghx@gmail.com </p>
+  <p>&copy; 2025 Genesis Framework</p>
+  <p>Email: isatishsinghx@gmail.com</p>
 </footer>
 
 </body>
